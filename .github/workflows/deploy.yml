@@ -1,0 +1,35 @@
+name: Deploy to GitHub Pages
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env: 
+      NODE_VERSION: 14.x
+      GIT_EMAIL: 7290072+dannil@users.noreply.github.com
+      GIT_NAME: Daniel Nilsson
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Setup Node ${{ env.NODE_VERSION }}
+      uses: actions/setup-node@v2-beta
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+    - name: Install Yarn
+      run: npm install -g yarn
+    - name: Install dependencies
+      run: yarn install
+    - name: Build
+      run: yarn build
+    - name: Lint
+      run: yarn lint
+    - name: Deploy to gh-pages
+      run: |
+        cd dist
+        git config --global user.email "${{ env.GIT_EMAIL }}"
+        git config --global user.name "${{ env.GIT_NAME }}"
+        git init
+        git add -A
+        git commit -m 'Deploy'
+        git push -f https://dannil:${{ secrets.GITHUB_TOKEN }}@github.com/dannil/dannil.se.git master:gh-pages
