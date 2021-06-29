@@ -27,9 +27,10 @@ jobs:
     - name: Deploy to gh-pages
       run: |
         cd dist
+        git config --global init.defaultBranch dist
         git config --global user.email "${{ env.GIT_EMAIL }}"
         git config --global user.name "${{ env.GIT_NAME }}"
         git init
         git add -A
         git commit -m 'Deploy'
-        git push -f https://dannil:${{ secrets.GITHUB_TOKEN }}@github.com/dannil/dannil.se.git master:gh-pages
+        git push -f https://dannil:${{ secrets.GITHUB_TOKEN }}@github.com/dannil/dannil.se.git dist:gh-pages
