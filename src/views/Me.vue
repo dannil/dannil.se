@@ -1,6 +1,6 @@
 <template>
-  <div class="home-view">
-    <h1>home.</h1>
+  <div class="me-view">
+    <h1>me.</h1>
     <p>This is a paragraph.</p>
   </div>
 </template>
@@ -9,12 +9,12 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'Home',
+  name: 'Me',
   components: {}
 });
 </script>
 
 <style scoped lang="scss">
-.home-view {
+.me-view {
 }
 </style>
