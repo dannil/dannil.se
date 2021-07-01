@@ -27,6 +27,7 @@ jobs:
     - name: Deploy to gh-pages
       run: |
         cd dist
+        cp index.html 404.html
         git config --global init.defaultBranch dist
         git config --global user.email "${{ env.GIT_EMAIL }}"
         git config --global user.name "${{ env.GIT_NAME }}"
