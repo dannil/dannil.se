@@ -1,16 +1,18 @@
 <template>
   <div class="experience-component">
     <div v-if="image" class="image">
-      <img :src="require(`@/assets/images/${image}`)" alt="" />
+      <img :src="require(`../${image}`)" alt="title" />
     </div>
     <div class="texts">
       <div class="title">
-        <span>{{ title }}</span>
+        <h3>{{ title }}</h3>
       </div>
       <div class="description">
         <span>{{ description }}</span>
       </div>
-      <p v-if="hasDates()">{{ toDateString() }}</p>
+    </div>
+    <div v-if="hasDates()" class="date">
+      <p>{{ toDateString() }}</p>
     </div>
   </div>
 </template>
@@ -59,6 +61,8 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .experience-component {
+  background-color: #275e7e;
+  padding: 1rem;
   display: flex;
   flex-wrap: wrap;
   .image {

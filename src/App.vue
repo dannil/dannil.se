@@ -28,7 +28,7 @@ html {
   background-color: $background-color;
   font-size: 18px;
   body {
-    margin: 0;
+    margin: 0 1rem 0 1rem;
   }
   #app {
     font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
