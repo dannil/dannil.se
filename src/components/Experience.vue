@@ -1,18 +1,37 @@
 <template>
   <div class="experience-component">
-    <div v-if="image" class="image">
-      <img :src="require(`@/assets/images/${image}`)" :alt="title" />
-    </div>
-    <div class="texts">
-      <div class="title">
-        <h3>{{ title }}</h3>
+    <div class="row">
+      <div class="col col-lg-2 col-md-2">
+        <div v-if="image" class="image">
+          <img :src="require(`@/assets/images/${image}`)" :alt="name" />
+        </div>
       </div>
-      <div class="description">
-        <span>{{ description }}</span>
+      <div class="col col-lg-10 col-md-10">
+        <div class="row">
+          <div class="col">
+            <div class="name">
+              <h3>
+                <span v-if="name">{{ name }}</span>
+                <span v-if="position"> - {{ position }}</span>
+              </h3>
+            </div>
+          </div>
+        </div>
+        <div v-if="hasDates()" class="row">
+          <div class="col">
+            <div class="date">
+              <p>{{ toDateString() }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="description">
+              <span>{{ description }}</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div v-if="hasDates()" class="date">
-      <p>{{ toDateString() }}</p>
     </div>
   </div>
 </template>
@@ -25,7 +44,8 @@ export default defineComponent({
   name: 'Experience',
   props: {
     image: String,
-    title: String,
+    name: String,
+    position: String,
     description: String,
     dateRange: {
       type: Array as PropType<Array<string>>,
@@ -41,17 +61,18 @@ export default defineComponent({
     toDateString(): string {
       const startDate = Date.parse(this.dateRange[0] as string);
       const endDate = Date.parse(this.dateRange[1] as string);
-      const dateFormat = 'MMM yyyy';
+      const dateFormat = 'MMMM yyyy';
       let output = '';
       if (!isNaN(startDate) && isNaN(endDate)) {
         output = format(startDate, dateFormat);
       } else if (isNaN(startDate) && !isNaN(endDate)) {
         output = format(endDate, dateFormat);
       } else {
-        output = `${format(startDate, dateFormat)} - ${format(
-          endDate,
-          dateFormat
-        )}`;
+        output = `${format(startDate, dateFormat)} - `;
+        // Append end date if it's less than the current date, otherwise it's 'current'
+        if (endDate < Date.now()) {
+          output += format(endDate, dateFormat);
+        }
       }
       return output;
     }
@@ -61,24 +82,14 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .experience-component {
-  background-color: #275e7e;
-  padding: 1rem;
   display: flex;
   flex-wrap: wrap;
+  padding: 0 0 1rem 0;
   .image {
-    width: 20%;
     img {
-      max-width: 100%;
-      max-height: 100%;
+      width: 100%;
+      height: 100%;
       object-fit: contain;
-    }
-  }
-  .texts {
-    flex-direction: column;
-    width: 80%;
-    .title {
-    }
-    .description {
     }
   }
 }

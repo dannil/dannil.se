@@ -1,8 +1,14 @@
 <template>
   <div class="nav-component">
-    <router-link to="/">home</router-link> |
-    <router-link to="/me">me</router-link> |
-    <router-link to="/experiences">experiences</router-link>
+    <div class="container-wrapped">
+      <div class="row">
+        <div class="col">
+          <router-link to="/">Home</router-link> |
+          <router-link to="/me">Me</router-link> |
+          <router-link to="/experiences">Experiences</router-link>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

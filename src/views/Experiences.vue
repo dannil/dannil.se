@@ -1,16 +1,31 @@
 <template>
   <div class="experiences-view">
-    <h1>experiences.</h1>
-    <p>This is a paragraph.</p>
-    <div class="employments">
-      <h2>employments.</h2>
-      <div v-for="employment in employments" :key="employment.title">
-        <Experience
-          :image="employment.image"
-          :title="employment.title"
-          :description="employment.description"
-          :dateRange="employment.dateRange"
-        />
+    <div class="container-wrapped-1">
+      <h2 class="heading-padding">Employments</h2>
+      <div class="employments-data">
+        <div v-for="exp in employments" :key="exp.title">
+          <Experience
+            :image="exp.image"
+            :name="exp.name"
+            :position="exp.position"
+            :description="exp.description"
+            :dateRange="exp.dateRange"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="container-wrapped-2">
+      <h2 class="heading-padding">Licenses and certifications</h2>
+      <div class="employments-data">
+        <div v-for="exp in licensesandcertifications" :key="exp.name">
+          <Experience
+            :image="exp.image"
+            :name="exp.name"
+            :position="exp.position"
+            :description="exp.description"
+            :dateRange="exp.dateRange"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -28,7 +43,8 @@ export default defineComponent({
   },
   data() {
     return {
-      employments: experiences.employments
+      employments: experiences.employments,
+      licensesandcertifications: experiences['licenses-and-certifications']
     };
   }
 });
@@ -36,5 +52,13 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .experiences-view {
+  .heading-padding {
+    padding: 0 0 1rem 0rem;
+  }
+  // .container-rounded {
+  //   border-radius: 10px;
+  //   border: 1px solid $font-color;
+  //   overflow: hidden;
+  // }
 }
 </style>

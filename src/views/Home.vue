@@ -1,7 +1,8 @@
 <template>
   <div class="home-view">
-    <h1>home.</h1>
-    <p>This is a paragraph.</p>
+    <div class="container-wrapped-1">
+      <p>This is a paragraph.</p>
+    </div>
   </div>
 </template>
 

@@ -1,6 +1,8 @@
 <template>
   <div class="pagenotfound-view">
-    <p>Oops! This page doesn't exist.</p>
+    <div class="container-wrapped-1">
+      <p>Oops! This page doesn't exist.</p>
+    </div>
   </div>
 </template>
 

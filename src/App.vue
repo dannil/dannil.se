@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-fluid">
     <div class="heading">
       <Nav />
     </div>
@@ -7,17 +7,23 @@
     <div class="content">
       <router-view />
     </div>
+    <div class="horizontal-divider"></div>
+    <div class="footer">
+      <Footer />
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import Nav from '@/components/Nav.vue';
+import Footer from '@/components/Footer.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
-    Nav
+    Nav,
+    Footer
   },
   created() {
     if (sessionStorage.redirect) {
@@ -31,26 +37,30 @@ export default defineComponent({
 
 <style lang="scss">
 html {
+  background-color: $main-background-color;
   color: $font-color;
-  background-color: $background-color;
-  font-size: 18px;
-  body {
-    margin: 0 1rem 0 1rem;
+}
+#app {
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+.container-fluid {
+  padding: 0 0 0 0 !important;
+  .container-wrapped,
+  .container-wrapped-1,
+  .container-wrapped-2 {
+    padding: 2rem 24rem 2rem 24rem;
   }
-  #app {
-    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    .container {
-      margin: 0 auto;
-      width: 60rem;
-      .horizontal-divider {
-        border: 1px solid $font-color;
-      }
-      .heading {
-        padding: 1rem 0 1rem 0;
-      }
-    }
+  .container-wrapped-1 {
+    background-color: $accent-1-color;
+  }
+  .container-wrapped-2 {
+    background-color: $accent-2-color;
+  }
+  .horizontal-divider {
+    border: 1px solid $font-color;
+  }
+  .heading {
+    background-color: $main-background-color;
   }
 }
 </style>
