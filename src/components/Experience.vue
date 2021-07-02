@@ -1,7 +1,7 @@
 <template>
   <div class="experience-component">
     <div v-if="image" class="image">
-      <img :src="require(`../${image}`)" alt="title" />
+      <img :src="require(`@/assets/images/${image}`)" :alt="title" />
     </div>
     <div class="texts">
       <div class="title">
