@@ -17,6 +17,15 @@
         "2021-05-21"
       ],
       "description": "Development of solutions primarily based on Microsofts Office 365 offerings, enabling people to fully utilize the digital workplace. Tech stacks included C#, JavaScript, ASP.NET and PowerShell."
+    },
+    {
+      "name": "Lund University School of Economics and Management ",
+      "position": "Teacher Assistant",
+      "dateRange": [
+        "2018-09-01",
+        "2019-06-01"
+      ],
+      "description": "Planning and coordination of lab sessions for students with a great amount of autonomy. Involved assigning assistants to lab sessions, arranging visiting hours for students and coordination of courses in conjunction with responsible teachers."
     }
   ],
   "licenses-and-certifications": [
@@ -27,5 +36,24 @@
       ],
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel mi vitae tellus sodales bibendum non porta sem. Maecenas sed eleifend tortor. Quisque ac posuere sapien. Phasellus at leo tempus, lacinia enim vitae, malesuada urna. Pellentesque vitae libero quis elit commodo commodo. Nam sit amet lectus vitae urna porta pulvinar ac quis magna. Quisque volutpat, diam sed dignissim sodales, magna velit dapibus nibh, sit amet eleifend ipsum orci sit amet ante. Nullam ut ligula id massa ultrices lobortis. Fusce eu hendrerit erat."
     }
+  ],
+  "educations": [
+    {
+      "name": "Lund University",
+      "dateRange": [
+        "2016-08-01",
+        "2019-06-01"
+      ],
+      "description": "Bachelor of Science - BS, Information Systems."
+    },
+    {
+      "name": "NTI Gymnasiet",
+      "dateRange": [
+        "2010-08-01",
+        "2013-06-01"
+      ],
+      "description": "Electrical and Electronics Engineering."
+    }
   ]
 }
+

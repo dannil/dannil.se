@@ -2,28 +2,35 @@
   <div class="experiences-view">
     <div class="container-wrapped-1">
       <h2 class="heading-padding">Employments</h2>
-      <div class="employments-data">
-        <div v-for="exp in employments" :key="exp.title">
-          <Experience
-            :name="exp.name"
-            :position="exp.position"
-            :description="exp.description"
-            :dateRange="exp.dateRange"
-          />
-        </div>
+      <div v-for="exp in employments" :key="exp.title">
+        <Experience
+          :name="exp.name"
+          :position="exp.position"
+          :description="exp.description"
+          :dateRange="exp.dateRange"
+        />
       </div>
     </div>
     <div class="container-wrapped-2">
       <h2 class="heading-padding">Licenses and certifications</h2>
-      <div class="employments-data">
-        <div v-for="exp in licensesandcertifications" :key="exp.name">
-          <Experience
-            :name="exp.name"
-            :position="exp.position"
-            :description="exp.description"
-            :dateRange="exp.dateRange"
-          />
-        </div>
+      <div v-for="exp in licensesandcertifications" :key="exp.name">
+        <Experience
+          :name="exp.name"
+          :position="exp.position"
+          :description="exp.description"
+          :dateRange="exp.dateRange"
+        />
+      </div>
+    </div>
+    <div class="container-wrapped-1">
+      <h2 class="heading-padding">Educations</h2>
+      <div v-for="exp in educations" :key="exp.name">
+        <Experience
+          :name="exp.name"
+          :position="exp.position"
+          :description="exp.description"
+          :dateRange="exp.dateRange"
+        />
       </div>
     </div>
   </div>
@@ -42,7 +49,8 @@ export default defineComponent({
   data() {
     return {
       employments: experiences.employments,
-      licensesandcertifications: experiences['licenses-and-certifications']
+      licensesandcertifications: experiences['licenses-and-certifications'],
+      educations: experiences.educations
     };
   }
 });
