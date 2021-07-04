@@ -5,7 +5,6 @@
       <div class="employments-data">
         <div v-for="exp in employments" :key="exp.title">
           <Experience
-            :image="exp.image"
             :name="exp.name"
             :position="exp.position"
             :description="exp.description"
@@ -19,7 +18,6 @@
       <div class="employments-data">
         <div v-for="exp in licensesandcertifications" :key="exp.name">
           <Experience
-            :image="exp.image"
             :name="exp.name"
             :position="exp.position"
             :description="exp.description"

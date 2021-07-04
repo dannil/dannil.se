@@ -1,7 +1,6 @@
 {
   "employments": [
     {
-      "image": "jayway.jpg",
       "name": "Jayway",
       "position": "Backend Developer",
       "dateRange": [
@@ -11,7 +10,6 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel mi vitae tellus sodales bibendum non porta sem. Maecenas sed eleifend tortor. Quisque ac posuere sapien. Phasellus at leo tempus, lacinia enim vitae, malesuada urna. Pellentesque vitae libero quis elit commodo commodo. Nam sit amet lectus vitae urna porta pulvinar ac quis magna. Quisque volutpat, diam sed dignissim sodales, magna velit dapibus nibh, sit amet eleifend ipsum orci sit amet ante. Nullam ut ligula id massa ultrices lobortis. Fusce eu hendrerit erat."
     },
     {
-      "image": "nexer.jpg",
       "name": "Nexer",
       "position": "SharePoint Specialist",
       "dateRange": [
@@ -23,12 +21,11 @@
   ],
   "licenses-and-certifications": [
     {
-      "image": "microsoft.svg",
       "name": "Microsoft 365 Certified Fundamentals",
       "dateRange": [
         "2019-08-01"
       ],
-      "description": "Prove that you understand the options available in Microsoft 365 and the benefits of adopting cloud services, the Software as a Service (SaaS) cloud model, and implementing Microsoft 365 cloud service."
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel mi vitae tellus sodales bibendum non porta sem. Maecenas sed eleifend tortor. Quisque ac posuere sapien. Phasellus at leo tempus, lacinia enim vitae, malesuada urna. Pellentesque vitae libero quis elit commodo commodo. Nam sit amet lectus vitae urna porta pulvinar ac quis magna. Quisque volutpat, diam sed dignissim sodales, magna velit dapibus nibh, sit amet eleifend ipsum orci sit amet ante. Nullam ut ligula id massa ultrices lobortis. Fusce eu hendrerit erat."
     }
   ]
 }

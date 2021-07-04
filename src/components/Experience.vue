@@ -1,21 +1,12 @@
 <template>
   <div class="experience-component">
     <div class="row">
-      <div class="col col-lg-2 col-md-2">
-        <div v-if="image" class="image">
-          <img :src="require(`@/assets/images/${image}`)" :alt="name" />
-        </div>
-      </div>
-      <div class="col col-lg-10 col-md-10">
-        <div class="row">
-          <div class="col">
-            <div class="name">
-              <h3>
-                <span v-if="name">{{ name }}</span>
-                <span v-if="position"> - {{ position }}</span>
-              </h3>
-            </div>
-          </div>
+      <div class="col">
+        <div class="name">
+          <h3>
+            <span v-if="name">{{ name }}</span>
+            <span v-if="position"> - {{ position }}</span>
+          </h3>
         </div>
         <div v-if="hasDates()" class="row">
           <div class="col">
@@ -43,7 +34,6 @@ import { format } from 'date-fns';
 export default defineComponent({
   name: 'Experience',
   props: {
-    image: String,
     name: String,
     position: String,
     description: String,
