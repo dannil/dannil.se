@@ -27,6 +27,7 @@ jobs:
     - name: Deploy to gh-pages
       run: |
         cd dist
+        echo dannil.se > CNAME
         git config --global init.defaultBranch dist
         git config --global user.email "${{ env.GIT_EMAIL }}"
         git config --global user.name "${{ env.GIT_NAME }}"
