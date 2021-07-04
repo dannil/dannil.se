@@ -62,5 +62,17 @@ html {
   .heading {
     background-color: $main-background-color;
   }
+  a,
+  a:hover,
+  a.router-link-exact-active {
+    color: $font-color;
+  }
+  a {
+    text-decoration: none;
+  }
+  a:hover,
+  a.router-link-exact-active {
+    text-decoration: underline;
+  }
 }
 </style>

@@ -22,15 +22,15 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .nav-component {
-  a {
-    color: $font-color;
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
-    &.router-link-exact-active {
-      text-decoration: underline;
-    }
-  }
+  // a {
+  //   color: $font-color;
+  //   text-decoration: none;
+  //   &:hover {
+  //     text-decoration: underline;
+  //   }
+  //   &.router-link-exact-active {
+  //     text-decoration: underline;
+  //   }
+  // }
 }
 </style>
