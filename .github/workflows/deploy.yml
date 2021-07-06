@@ -5,15 +5,18 @@ on: workflow_dispatch
 jobs:
   build:
     runs-on: ubuntu-latest
-    env: 
+    env:
       NODE_VERSION: 14.x
-      GIT_EMAIL: 7290072+dannil@users.noreply.github.com
-      GIT_NAME: Daniel Nilsson
+      DEPLOY_FOLDER: dist
+      DOMAIN: dannil.se
+      GIT_NAME: CI
+      GIT_EMAIL: ci@dannil.se
+      GIT_MESSAGE: Deploy
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
     - name: Setup Node ${{ env.NODE_VERSION }}
-      uses: actions/setup-node@v2-beta
+      uses: actions/setup-node@v2
       with:
         node-version: ${{ env.NODE_VERSION }}
     - name: Install Yarn
@@ -26,12 +29,12 @@ jobs:
       run: yarn lint
     - name: Deploy to gh-pages
       run: |
-        cd dist
-        echo dannil.se > CNAME
-        git config --global init.defaultBranch dist
-        git config --global user.email "${{ env.GIT_EMAIL }}"
+        cd ${{ env.DEPLOY_FOLDER }}
+        echo ${{ env.DOMAIN }} > CNAME
+        git config --global init.defaultBranch ${{ env.DEPLOY_FOLDER }}
         git config --global user.name "${{ env.GIT_NAME }}"
+        git config --global user.email "${{ env.GIT_EMAIL }}"
         git init
         git add -A
-        git commit -m 'Deploy'
-        git push -f https://dannil:${{ secrets.GITHUB_TOKEN }}@github.com/dannil/dannil.se.git dist:gh-pages
+        git commit -m "${{ env.GIT_MESSAGE }}"
+        git push -f https://dannil:${{ secrets.GITHUB_TOKEN }}@github.com/dannil/${{ env.DOMAIN }}.git ${{ env.DEPLOY_FOLDER }}:gh-pages
