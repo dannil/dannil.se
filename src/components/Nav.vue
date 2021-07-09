@@ -1,5 +1,5 @@
 <template>
-  <div class="nav-component">
+  <nav class="nav-component">
     <div class="container-wrapped">
       <div class="row">
         <div class="col">
@@ -9,7 +9,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </nav>
 </template>
 
 <script lang="ts">

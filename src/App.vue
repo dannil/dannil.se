@@ -1,16 +1,17 @@
 <template>
+  <a class="skip-link" href="#content">Skip to content</a>
   <div class="container-fluid">
-    <div class="heading">
+    <header class="heading">
       <Nav />
-    </div>
+    </header>
     <div class="horizontal-divider"></div>
-    <div class="content">
+    <main id="content" class="content">
       <router-view />
-    </div>
+    </main>
     <div class="horizontal-divider"></div>
-    <div class="footer">
+    <footer class="footer">
       <Footer />
-    </div>
+    </footer>
   </div>
 </template>
 
@@ -31,11 +32,6 @@ export default defineComponent({
       delete sessionStorage.redirect;
       this.$router.push(redirect);
     }
-  },
-  data() {
-    return {
-      fallbackTitle: process.env.VUE_APP_FALLBACK_TITLE
-    };
   }
 });
 </script>
@@ -68,5 +64,17 @@ html {
   .horizontal-divider {
     border: 1px solid $font-color;
   }
+}
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000000;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+.skip-link:focus {
+  top: 0;
 }
 </style>

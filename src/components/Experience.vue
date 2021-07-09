@@ -29,7 +29,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
-import { format } from 'date-fns';
+import dayjs from 'dayjs';
 
 export default defineComponent({
   name: 'Experience',
@@ -51,17 +51,17 @@ export default defineComponent({
     toDateString(): string {
       const startDate = Date.parse(this.dateRange[0] as string);
       const endDate = Date.parse(this.dateRange[1] as string);
-      const dateFormat = 'MMMM yyyy';
+      const dateFormat = 'MMMM YYYY';
       let output = '';
       if (!isNaN(startDate) && isNaN(endDate)) {
-        output = format(startDate, dateFormat);
+        output = dayjs(startDate).format(dateFormat);
       } else if (isNaN(startDate) && !isNaN(endDate)) {
-        output = format(endDate, dateFormat);
+        output = dayjs(endDate).format(dateFormat);
       } else {
-        output = `${format(startDate, dateFormat)} - `;
+        output = `${dayjs(startDate).format(dateFormat)} - `;
         // Append end date if it's less than the current date, otherwise it's 'current'
         if (endDate < Date.now()) {
-          output += format(endDate, dateFormat);
+          output += dayjs(endDate).format(dateFormat);
         }
       }
       return output;
