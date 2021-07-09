@@ -1,9 +1,4 @@
 <template>
-  <metainfo>
-    <template v-slot:title="{ content }">
-      {{ content ? `${content} | ${fallbackTitle}` : `${fallbackTitle}` }}
-    </template>
-  </metainfo>
   <div class="container-fluid">
     <div class="heading">
       <Nav />
@@ -21,7 +16,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { useMeta } from 'vue-meta';
 import Nav from '@/components/Nav.vue';
 import Footer from '@/components/Footer.vue';
 
@@ -30,11 +24,6 @@ export default defineComponent({
   components: {
     Nav,
     Footer
-  },
-  setup() {
-    useMeta({
-      title: ''
-    });
   },
   created() {
     if (sessionStorage.redirect) {
