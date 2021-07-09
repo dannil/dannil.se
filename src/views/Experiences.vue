@@ -1,38 +1,18 @@
 <template>
   <div class="experiences-view">
-    <div class="container-wrapped">
-      <h2 class="heading-padding">Employments</h2>
-      <div v-for="exp in employments" :key="exp.title">
-        <Experience
-          :name="exp.name"
-          :position="exp.position"
-          :description="exp.description"
-          :dateRange="exp.dateRange"
-        />
+    <template v-for="key in Object.keys(experiences)" :key="key">
+      <div class="container-wrapped">
+        <h2 class="heading-padding">{{ normalize(key) }}</h2>
+        <template v-for="experience in experiences[key]" :key="experience.name">
+          <Experience
+            :name="experience.name"
+            :position="experience.position"
+            :description="experience.description"
+            :dateRange="experience.dateRange"
+          />
+        </template>
       </div>
-    </div>
-    <div class="container-wrapped">
-      <h2 class="heading-padding">Licenses and certifications</h2>
-      <div v-for="exp in licensesandcertifications" :key="exp.name">
-        <Experience
-          :name="exp.name"
-          :position="exp.position"
-          :description="exp.description"
-          :dateRange="exp.dateRange"
-        />
-      </div>
-    </div>
-    <div class="container-wrapped">
-      <h2 class="heading-padding">Educations</h2>
-      <div v-for="exp in educations" :key="exp.name">
-        <Experience
-          :name="exp.name"
-          :position="exp.position"
-          :description="exp.description"
-          :dateRange="exp.dateRange"
-        />
-      </div>
-    </div>
+    </template>
   </div>
 </template>
 
@@ -40,7 +20,7 @@
 import { defineComponent } from 'vue';
 import { useMeta } from 'vue-meta';
 import Experience from '@/components/Experience.vue';
-import experiences from '@/assets/data/experiences.json';
+import experiencesData from '@/assets/data/experiences.json';
 
 export default defineComponent({
   name: 'Experiences',
@@ -54,10 +34,17 @@ export default defineComponent({
   },
   data() {
     return {
-      employments: experiences.employments,
-      licensesandcertifications: experiences['licenses-and-certifications'],
-      educations: experiences.educations
+      experiences: experiencesData
     };
+  },
+  methods: {
+    normalize(str: string): string {
+      // Uppercase first letter
+      let normalized = str.charAt(0).toUpperCase() + str.slice(1);
+      // Remove dashes
+      normalized = normalized.replaceAll('-', ' ');
+      return normalized;
+    }
   }
 });
 </script>
