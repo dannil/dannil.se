@@ -1,6 +1,6 @@
 <template>
   <div class="home-view">
-    <div class="container-wrapped-1">
+    <div class="container-wrapped">
       <p>This is a paragraph.</p>
     </div>
   </div>

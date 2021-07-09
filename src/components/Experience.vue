@@ -72,8 +72,6 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .experience-component {
-  display: flex;
-  flex-wrap: wrap;
   padding: 0 0 1rem 0;
   .image {
     img {

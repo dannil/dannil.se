@@ -54,29 +54,30 @@ export default defineComponent({
 <style lang="scss">
 html {
   background-color: $main-background-color;
-  color: $font-color;
 }
 #app {
-  font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+  color: $font-color;
+  font-size: 16px;
+  font-family: 'Verdana', 'Geneva', sans-serif;
 }
 .container-fluid {
   padding: 0 0 0 0 !important;
-  .container-wrapped,
-  .container-wrapped-1,
-  .container-wrapped-2 {
+  .heading {
+    background-color: $main-background-color;
+  }
+  .container-wrapped {
     padding: 2rem 24rem 2rem 24rem;
   }
-  .container-wrapped-1 {
-    background-color: $accent-1-color;
-  }
-  .container-wrapped-2 {
-    background-color: $accent-2-color;
+  .content {
+    .container-wrapped:nth-of-type(odd) {
+      background-color: $accent-1-color;
+    }
+    .container-wrapped:nth-of-type(even) {
+      background-color: $accent-2-color;
+    }
   }
   .horizontal-divider {
     border: 1px solid $font-color;
-  }
-  .heading {
-    background-color: $main-background-color;
   }
 }
 </style>

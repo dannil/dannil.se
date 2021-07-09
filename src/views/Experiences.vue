@@ -1,6 +1,6 @@
 <template>
   <div class="experiences-view">
-    <div class="container-wrapped-1">
+    <div class="container-wrapped">
       <h2 class="heading-padding">Employments</h2>
       <div v-for="exp in employments" :key="exp.title">
         <Experience
@@ -11,7 +11,7 @@
         />
       </div>
     </div>
-    <div class="container-wrapped-2">
+    <div class="container-wrapped">
       <h2 class="heading-padding">Licenses and certifications</h2>
       <div v-for="exp in licensesandcertifications" :key="exp.name">
         <Experience
@@ -22,7 +22,7 @@
         />
       </div>
     </div>
-    <div class="container-wrapped-1">
+    <div class="container-wrapped">
       <h2 class="heading-padding">Educations</h2>
       <div v-for="exp in educations" :key="exp.name">
         <Experience
@@ -67,10 +67,5 @@ export default defineComponent({
   .heading-padding {
     padding: 0 0 1rem 0rem;
   }
-  // .container-rounded {
-  //   border-radius: 10px;
-  //   border: 1px solid $font-color;
-  //   overflow: hidden;
-  // }
 }
 </style>
