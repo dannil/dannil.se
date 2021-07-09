@@ -8,16 +8,10 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { useMeta } from 'vue-meta';
 
 export default defineComponent({
   name: 'Me',
-  components: {},
-  setup() {
-    useMeta({
-      title: 'Me'
-    });
-  }
+  components: {}
 });
 </script>
 

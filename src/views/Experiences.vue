@@ -18,7 +18,6 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { useMeta } from 'vue-meta';
 import Experience from '@/components/Experience.vue';
 import experiencesData from '@/assets/data/experiences.json';
 
@@ -26,11 +25,6 @@ export default defineComponent({
   name: 'Experiences',
   components: {
     Experience
-  },
-  setup() {
-    useMeta({
-      title: 'Experiences'
-    });
   },
   data() {
     return {
