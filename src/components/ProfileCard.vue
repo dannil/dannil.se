@@ -1,5 +1,5 @@
 <template>
-  <div class="profile-card"></div>
+  <div class="profile-card-component"></div>
 </template>
 
 <script lang="ts">

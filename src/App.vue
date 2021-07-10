@@ -2,7 +2,9 @@
   <a class="skip-link" href="#content">Skip to content</a>
   <div class="container-fluid">
     <header class="heading">
-      <Nav />
+      <nav>
+        <Nav />
+      </nav>
     </header>
     <div class="horizontal-divider"></div>
     <main id="content" class="content">

@@ -1,5 +1,5 @@
 <template>
-  <nav class="nav-component">
+  <div class="nav-component">
     <div class="container-wrapped">
       <div class="row">
         <div class="col">
@@ -9,7 +9,7 @@
         </div>
       </div>
     </div>
-  </nav>
+  </div>
 </template>
 
 <script lang="ts">
@@ -25,9 +25,7 @@ export default defineComponent({
   a {
     color: $font-color;
     text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
+    &:hover,
     &.router-link-exact-active {
       text-decoration: underline;
     }
