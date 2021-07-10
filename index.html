@@ -1,0 +1,19 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name="description" content="Portfolio site for Daniel Nilsson"><link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><title>dannil.se</title><script>// MIT License
+    // https://github.com/rafgraph/spa-github-pages
+    // This script checks to see if a redirect is present in the query string,
+    // converts it back into the correct url and adds it to the
+    // browser's history using window.history.replaceState(...),
+    // which won't cause the browser to attempt to load the new url.
+    // When the single page app is loaded further down in this file,
+    // the correct url will be waiting in the browser's history for
+    // the single page app to route accordingly.
+    (function (l) {
+      if (l.search[1] === '/') {
+        var decoded = l.search.slice(1).split('&').map(function (s) {
+          return s.replace(/~and~/g, '&')
+        }).join('?');
+        window.history.replaceState(null, null,
+          l.pathname.slice(0, -1) + decoded + l.hash
+        );
+      }
+    }(window.location))</script><link href="/css/chunk-0f07cb63.0e433876.css" rel="prefetch"><link href="/css/chunk-24235508.0e433876.css" rel="prefetch"><link href="/css/chunk-db3d9712.f9bc0b02.css" rel="prefetch"><link href="/js/chunk-0f07cb63.c6c7313c.js" rel="prefetch"><link href="/js/chunk-24235508.586c74af.js" rel="prefetch"><link href="/js/chunk-db3d9712.a14277ed.js" rel="prefetch"><link href="/css/app.bd444d38.css" rel="preload" as="style"><link href="/css/chunk-vendors.ff650d32.css" rel="preload" as="style"><link href="/js/app.bd710dcf.js" rel="preload" as="script"><link href="/js/chunk-vendors.3986f4f1.js" rel="preload" as="script"><link href="/css/chunk-vendors.ff650d32.css" rel="stylesheet"><link href="/css/app.bd444d38.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but dannil.se doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><script src="/js/chunk-vendors.3986f4f1.js"></script><script src="/js/app.bd710dcf.js"></script></body></html>
